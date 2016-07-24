@@ -1,0 +1,7 @@
+sudo docker stop web  
+sudo docker rm web 
+sudo docker rmi nz-web 
+sudo docker build -t nz-web --rm=true .
+sudo docker run -d --name web nz-web
+
+

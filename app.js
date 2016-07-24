@@ -75,5 +75,15 @@ module.exports = function( options, fail, done ) {
         })
     }})
 
+  server.route({
+    method: 'GET', path: '/api/ping',
+    handler: function (req, reply){
+      server.seneca.act(
+        'role:web,cmd:ping',{query:req.query.q},
+        function(err,out){
+          reply(err||out)
+        })
+    }}) 
+
   done(server)
 }

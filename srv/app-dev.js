@@ -17,6 +17,14 @@ require('..')(
           version:'0.0.0'
         }]})
       })
+      
+      .add('role:web,cmd:ping',function(msg,done){
+        var d = new Date();
+        done(null,{items:[{
+          name:d.toString(),
+          version:'0.0.0'
+        }]})
+      })
 
       .add('role:info,cmd:get',function(msg,done){
         done(null,{npm:{
